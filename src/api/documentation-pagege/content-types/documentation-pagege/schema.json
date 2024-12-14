@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "documentation_pageges",
+  "info": {
+    "singularName": "documentation-pagege",
+    "pluralName": "documentation-pageges",
+    "displayName": "Documentation Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid"
+    },
+    "Order": {
+      "type": "biginteger"
+    },
+    "Category": {
+      "type": "string"
+    },
+    "Published": {
+      "type": "boolean"
+    },
+    "Content": {
+      "type": "richtext"
+    }
+  }
+}
