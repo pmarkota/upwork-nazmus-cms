@@ -387,6 +387,14 @@ export interface ApiDocumentationPagegeDocumentationPagege
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    documentation_page: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::documentation-pagege.documentation-pagege'
+    >;
+    documentation_pages: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::documentation-pagege.documentation-pagege'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -394,9 +402,17 @@ export interface ApiDocumentationPagegeDocumentationPagege
     > &
       Schema.Attribute.Private;
     Order: Schema.Attribute.BigInteger;
+    parent_doc: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::documentation-pagege.documentation-pagege'
+    >;
     Published: Schema.Attribute.Boolean;
     publishedAt: Schema.Attribute.DateTime;
     Slug: Schema.Attribute.UID;
+    SubDocs: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::documentation-pagege.documentation-pagege'
+    >;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

@@ -29,6 +29,30 @@
     },
     "Content": {
       "type": "richtext"
+    },
+    "parent_doc": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::documentation-pagege.documentation-pagege",
+      "inversedBy": "documentation_pages"
+    },
+    "documentation_pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::documentation-pagege.documentation-pagege",
+      "mappedBy": "parent_doc"
+    },
+    "SubDocs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::documentation-pagege.documentation-pagege",
+      "mappedBy": "documentation_page"
+    },
+    "documentation_page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::documentation-pagege.documentation-pagege",
+      "inversedBy": "SubDocs"
     }
   }
 }
